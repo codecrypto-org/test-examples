@@ -27,8 +27,10 @@ describe('Tests de Usuarios con MongoDB', () => {
 
   describe('Obtener usuarios', () => {
     it('debería obtener todos los usuarios', async () => {
+      // arrange
       const usuarios = await obtenerUsuarios(db);
-      
+      // act
+      //assertions
       expect(usuarios).toHaveLength(4);
       expect(usuarios[0]).toHaveProperty('nombre');
       expect(usuarios[0]).toHaveProperty('email');
@@ -37,8 +39,10 @@ describe('Tests de Usuarios con MongoDB', () => {
     });
 
     it('debería obtener un usuario por email', async () => {
+      // arrange
       const usuario = await obtenerUsuarioPorEmail(db, 'juan.perez@example.com');
-      
+      // act
+      //assertions
       expect(usuario).not.toBeNull();
       expect(usuario?.nombre).toBe('Juan Pérez');
       expect(usuario?.email).toBe('juan.perez@example.com');
@@ -70,16 +74,18 @@ describe('Tests de Usuarios con MongoDB', () => {
   });
 
   describe('Crear usuarios', () => {
+
     it('debería crear un nuevo usuario', async () => {
+      // arrange
       const nuevoUsuario: Omit<User, '_id'> = {
         nombre: 'Pedro Sánchez',
         email: 'pedro.sanchez@example.com',
         edad: 32,
         activo: true
       };
-
+      // act
       const usuarioCreado = await crearUsuario(db, nuevoUsuario);
-      
+      //assertions
       expect(usuarioCreado).not.toBeNull();
       expect(usuarioCreado._id).toBeDefined();
       expect(usuarioCreado.nombre).toBe('Pedro Sánchez');

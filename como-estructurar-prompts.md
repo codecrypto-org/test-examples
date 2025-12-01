@@ -1,4 +1,4 @@
-# Cómo Estructurar Prompts para Trabajar con IA de Desarrollo
+◊# Cómo Estructurar Prompts para Trabajar con IA de Desarrollo
 
 Basado en la experiencia del proyecto de testing, aquí están las mejores prácticas para estructurar tus prompts y hacer el trabajo más eficiente.
 
