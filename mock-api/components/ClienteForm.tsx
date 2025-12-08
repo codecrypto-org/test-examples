@@ -51,22 +51,22 @@ export default function ClienteForm({ cliente, onSubmit, onCancel }: ClienteForm
       )}
 
       <div>
-        <label htmlFor="identificador" className="block text-sm font-medium text-gray-700 mb-1">
-          DNI *
+        <label htmlFor="identificador" className="block text-sm font-medium text-gray-900 mb-1">
+          Dni *
         </label>
         <input
-          type="text"
+          type="text" 
           id="identificador"
           value={formData.identificador}
           onChange={(e) => setFormData({ ...formData, identificador: e.target.value })}
           required
           disabled={!!cliente}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+          className="w-full px-3 py-2 bg-white text-gray-900 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:text-gray-600 disabled:border-gray-300"
         />
       </div>
 
       <div>
-        <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="nombre" className="block text-sm font-medium text-gray-900 mb-1">
           Nombre *
         </label>
         <input
@@ -75,12 +75,12 @@ export default function ClienteForm({ cliente, onSubmit, onCancel }: ClienteForm
           value={formData.nombre}
           onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 bg-white text-gray-900 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="telefono" className="block text-sm font-medium text-gray-900 mb-1">
           Teléfono *
         </label>
         <input
@@ -89,12 +89,12 @@ export default function ClienteForm({ cliente, onSubmit, onCancel }: ClienteForm
           value={formData.telefono}
           onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 bg-white text-gray-900 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="mail" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="mail" className="block text-sm font-medium text-gray-900 mb-1">
           Email *
         </label>
         <input
@@ -103,7 +103,7 @@ export default function ClienteForm({ cliente, onSubmit, onCancel }: ClienteForm
           value={formData.mail}
           onChange={(e) => setFormData({ ...formData, mail: e.target.value })}
           required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-2 bg-white text-gray-900 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 

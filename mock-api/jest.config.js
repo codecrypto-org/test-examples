@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
@@ -8,6 +9,7 @@ const createJestConfig = nextJest({
 // Add any custom config to be passed to Jest
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
@@ -18,27 +20,6 @@ const customJestConfig = {
     'lib/**/*.{ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
-  ],
-  // Configuración específica para tests de API y componentes
-  projects: [
-    {
-      displayName: 'components',
-      testMatch: ['**/__tests__/components/**/*.test.{ts,tsx}'],
-      testEnvironment: 'jest-environment-jsdom',
-      setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-      moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/$1',
-      },
-    },
-    {
-      displayName: 'api',
-      testMatch: ['**/__tests__/api/**/*.test.{ts,tsx}'],
-      testEnvironment: 'node',
-      setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-      moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/$1',
-      },
-    },
   ],
 }
 
